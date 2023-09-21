@@ -18,24 +18,38 @@
     height: 50px; /* Height of the vertical part of the L */
     top: 0;
     left: 5%;
-    border-left: 7px solid violet; /* Set the color and style of the border */
-    border-bottom: 7px solid violet; /* Set the color and style of the border */
+    border-left: 7px solid #F7A9B9; /* Set the color and style of the border */
+    border-bottom: 7px solid #F7A9B9; /* Set the color and style of the border */
 }
 
 /* Zigzag edge at the right corner (Top edge) */
-.main-container::after {
-    content: '';
+
+
+.second-container::before {
+    content: "";
+    display: block;
     position: absolute;
-    width: 10%; /* Full width of the container */
-    height: 32px; /* Line thickness of the zigzag edge */
-    top: 3%;
+    left: 90%;
     right: 0;
-    background-image: 
-    linear-gradient(45deg, transparent 26px,violet 0), 
-    linear-gradient(-45deg, transparent 26px, violet 0);
-background-position: left top;
-background-size: 20px 32px;
-transform:rotate(180deg);
+    height: 12px;
+    top: 7%;
+    background: linear-gradient(-135deg, #F7A9B9 8px, transparent 0) 0 8px, linear-gradient(135deg, #F7A9B9 8px, transparent 0) 0 8px;
+    background-position: top left;
+    background-repeat: repeat-x;
+    background-size: 16px 16px;
+}
+.main-container::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 90%;
+    right: 0;
+    height: 16px;
+    top: 6.5%;
+    background: linear-gradient(-135deg, whitesmoke 8px, transparent 0) 0 8px, linear-gradient(135deg, whitesmoke 8px, transparent 0) 0 8px;
+    background-position: top left;
+    background-repeat: repeat-x;
+    background-size: 16px 16px;
 
 }
 
@@ -52,29 +66,31 @@ transform:rotate(180deg);
     width:90%;
     height:80%;
     background-color: white;
-    
-    padding:30px;
+    padding:8%;
+overflow: auto;
 }
+ 
+
 
 .head{
     color:darkmagenta;
     font-family: roboto;
     font-weight: bold;
-    font-size:35px;
+    font-size:30px;
 
 }
 .list1{
     list-style-type:none;
-    width:50%;
+    width:60%;
 
 }
 .item1{
     background-color: rgba(255, 0, 128, 0.059);
-    padding:4px;
+   padding:3px;
     padding-left:20px;
     border-radius: 8px;
      width:90%;
-    margin:10px;
+    margin-top:10px;
 }
 .icon{
     color: gold;
@@ -102,16 +118,17 @@ span{
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    height:50%;
 }
 .item2{
     background-color:rgb(92, 25, 92);
     color: white;
     font-family: roboto;
-    font-size:10px;
-    font-weight: 400;
-   width:300px;
-   height: 200px;
-    padding:20px;
+    font-size:40%;
+    font-weight: 300;
+   width:30%;
+   height:8rem;
+    padding:10px;
     border-radius: 10px;
 
 }
@@ -126,9 +143,51 @@ img{
 }
 
 @media screen and (max-width:700px){
+    .main-container::before {
+        content: '';
+        position: absolute;
+        width: 30px; /* Width of the horizontal part of the L */
+        height: 30px; /* Height of the vertical part of the L */
+        top: 0;
+        left: 5%;
+        border-left: 7px solid #F7A9B9; /* Set the color and style of the border */
+        border-bottom: 7px solid #F7A9B9; /* Set the color and style of the border */
+    }
+    
+    /* Zigzag edge at the right corner (Top edge) */
+    
+    
+    .second-container::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 90%;
+        right: 0;
+        height: 12px;
+        top: 5%;
+        background: linear-gradient(-135deg, #F7A9B9 8px, transparent 0) 0 8px, linear-gradient(135deg, #F7A9B9 8px, transparent 0) 0 8px;
+        background-position: top left;
+        background-repeat: repeat-x;
+        background-size: 16px 16px;
+    }
+    .main-container::after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 90%;
+        right: 0;
+        height: 16px;
+        top: 4.5%;
+        background: linear-gradient(-135deg, whitesmoke 8px, transparent 0) 0 8px, linear-gradient(135deg, whitesmoke 8px, transparent 0) 0 8px;
+        background-position: top left;
+        background-repeat: repeat-x;
+        background-size: 16px 16px;
+    
+    }
     .second-container{
         height:85%;
         width:90%;
+       overflow: auto;
     }
 
     .text-container{
@@ -153,7 +212,7 @@ img{
     padding: 0px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+   
     align-items: center;
     width: 100%;
 }
